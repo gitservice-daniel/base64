@@ -58,7 +58,7 @@ typedef unsigned __int64 uint64_t;
 * @Usage
 * > BASE64 base64;
 * > while (dataflow) {
-* >     base64.add(pointer to data, number of new bytes);
+* >     base64.add("DATA");
 * > }
 * >
 * > std::string data = base64.encode();
