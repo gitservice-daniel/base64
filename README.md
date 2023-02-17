@@ -13,7 +13,7 @@ std::cout << data << std::endl; // Result: "SGVsbG8gV29ybGQ="
 data = base64.decode(data);
 std::cout << data << std::endl; // Result: "Hello World"
 
-Or with a streaming option:
+// Or with a streaming option:
 
 while (dataflow) {
   base64.add("DATA");
