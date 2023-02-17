@@ -1,6 +1,6 @@
 # BASE64 Library for C++
 
-This C++ Library offers an implementation of BASE64 encoding and decoding. You may refer to the source code for a deeper understanding. The compiled binary files are available in the GitHub release.
+This C++ Library offers an implementation of BASE64 encoding and decoding. You may refer to the source code for a deeper understanding.
 
 ## Usage
 
