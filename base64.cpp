@@ -80,7 +80,7 @@ std::string base64_encode(uint8_t* buffer, uint32_t length) {
 }
 
 std::string base64_decode(std::string const& encoded_string) {
-	int in_len = encoded_string.size();
+	int in_len = (int) encoded_string.size();
 
 	int i = 0,
 		j = 0,
@@ -96,7 +96,7 @@ std::string base64_decode(std::string const& encoded_string) {
 
 		if (i == 4) {
 			for (i = 0; i < 4; i++)
-				char_array_4[i] = characters.find(char_array_4[i]);
+				char_array_4[i] = (uint8_t) characters.find(char_array_4[i]);
 
 			char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
 			char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
@@ -127,7 +127,7 @@ std::string base64_decode(std::string const& encoded_string) {
 }
 
 std::string BASE64::encode(const std::string& text) {
-	return base64_encode((uint8_t*) text.c_str(), text.size());
+	return base64_encode((uint8_t*) text.c_str(), (uint32_t) text.size());
 }
 
 std::string BASE64::decode(std::string data) {
@@ -135,7 +135,7 @@ std::string BASE64::decode(std::string data) {
 }
 
 std::string BASE64::encode() {
-	return base64_encode((uint8_t*)stream.c_str(), stream.size());
+	return base64_encode((uint8_t*)stream.c_str(), (uint32_t) stream.size());
 }
 
 std::string BASE64::decode() {
